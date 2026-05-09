@@ -1,4 +1,4 @@
-import matrix.*
+import pasajeros.*
 
 object nave {
     var pasajeros = [neo, morfeo, trinity]
@@ -11,8 +11,10 @@ object nave {
     method subirALaNave(pasajero) =  pasajeros.add(pasajero)
     method chocar() { pasajeros.forEach({p=> p.saltar()})
     pasajeros.clear()}
-    method acelerar() { pasajeros.filter({p => !p.esElElegido()}) ////////
-    }
-   
-    
+    method acelerar() { pasajeros.filter({p => !p.esElElegido()})}  ///////////
+
+    method pasajerosValiosos() = pasajeros.filter({p => p.vitalidad() > 5 })
+    method pasajeroAlHorno() = pasajeros.any({p => p.vitalidad() == 0 })
+    method todosLosPasajerosEnCondiciones() = pasajeros.all({p=> p.vitalidad() == 2})
+    method promedioVitalidad() =  pasajeros.
     }
